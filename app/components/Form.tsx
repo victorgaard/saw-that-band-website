@@ -6,6 +6,7 @@ type FormProps = {
   email: string;
   handleUsernameChange: (e: ChangeEvent<HTMLInputElement>) => void;
   handleEmailChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  isValidEmail: boolean;
   submit: () => void;
   loading: boolean;
   error: string;
@@ -24,12 +25,14 @@ function Form({
   email,
   handleUsernameChange,
   handleEmailChange,
+  isValidEmail,
   submit,
   loading,
   error,
   success,
   userRef,
 }: FormProps) {
+  const disabled = !username || !isValidEmail || loading;
   return (
     <form
       onSubmit={(e) => {
@@ -39,7 +42,7 @@ function Form({
       className="flex flex-col gap-2"
     >
       <p className="text-sm text-zinc-300">
-        Reserve your unique username before the launch
+        Reserve your username before the launch
       </p>
       <div className="relative">
         <p className="text-zinc-500 pointer-events-none text-sm absolute left-4 flex items-center h-full">
@@ -52,8 +55,8 @@ function Form({
           type="text"
           value={username}
           onChange={handleUsernameChange}
-          placeholder="your-username"
-          className="bg-white/10 pl-[72px] text-white pr-[132px] w-full border text-sm border-zinc-600 p-4 rounded-lg"
+          placeholder="username"
+          className="bg-white/10 focus:outline-zinc-100/60 pl-[72px] text-white pr-[132px] w-full border text-sm border-zinc-600 p-4 rounded-lg"
           autoFocus
         />
       </div>
@@ -62,12 +65,12 @@ function Form({
         value={email}
         onChange={handleEmailChange}
         placeholder="email address"
-        className="bg-white/10 text-white pr-[132px] w-full border text-sm border-zinc-600 p-4 rounded-lg"
+        className="bg-white/10 focus:outline-zinc-100/60 text-white pr-[132px] w-full border text-sm border-zinc-600 p-4 rounded-lg"
       />
       <button
         type="submit"
-        disabled={!username || !email || loading}
-        className="bg-gradient-to-br from-emerald-400 to-green-400 hover:from-green-400 hover:to-green-400 text-zinc-900 text-sm font-semibold p-4 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+        disabled={disabled}
+        className="bg-gradient-to-br from-emerald-400 to-green-400 hover:from-green-400 hover:to-green-400 text-zinc-900 text-sm font-semibold p-4 rounded-lg disabled:hover:from-emerald-400 disabled:hover:to-green-400 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
       >
         {loading ? "Reserving..." : "Reserve username"}
       </button>
@@ -82,11 +85,11 @@ function Form({
           <CheckIcon className="w-4 h-4" />
           <p className="text-xs">
             Username{" "}
-            <span className="font-semibold text-emerald-200">
+            <span className="font-medium text-emerald-200">
               {userRef.current?.username}
             </span>{" "}
             is now reserved for{" "}
-            <span className="font-semibold text-emerald-200">
+            <span className="font-medium text-emerald-200">
               {userRef.current?.email}
             </span>
           </p>

@@ -1,6 +1,6 @@
 "use client";
 
-import { ChangeEvent, useEffect, useRef, useState } from "react";
+import { ChangeEvent, useRef, useState } from "react";
 import Form from "./Form";
 import reserveAddress from "../utils/reserveAddress";
 
@@ -12,8 +12,18 @@ function FormWrapper() {
   const [success, setSuccess] = useState(false);
   const userRef = useRef<{ email: string; username: string }>();
 
+  const validEmailRegex = /^[\w-\\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+  const onlyLowerCaseLettersRegex = /^[a-z]+$/;
+  const isValidEmail = validEmailRegex.test(email);
+  
   function handleUsernameChange(e: ChangeEvent<HTMLInputElement>) {
-    setUsername(e.target.value);
+    const currentUsername = e.target.value.toLowerCase().trim();
+    if (onlyLowerCaseLettersRegex.test(currentUsername)) {
+      setUsername(currentUsername);
+    }
+    if (!e.target.value) {
+      setUsername("");
+    }
   }
 
   function handleEmailChange(e: ChangeEvent<HTMLInputElement>) {
@@ -46,12 +56,14 @@ function FormWrapper() {
     });
   }
 
+
   return (
     <Form
       username={username}
       email={email}
       handleUsernameChange={handleUsernameChange}
       handleEmailChange={handleEmailChange}
+      isValidEmail={isValidEmail}
       submit={submit}
       loading={loading}
       error={error}
