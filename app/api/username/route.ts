@@ -19,8 +19,8 @@ export async function POST(request: Request) {
   const username = searchParams.get("username");
 
   const { data, error } = await supabase
-  .from("Waitlist")
-  .insert([{ email, username }])
+    .from("Waitlist")
+    .insert([{ email, username }]);
 
-return NextResponse.json(data);
+  return NextResponse.json({ data, error });
 }
