@@ -19,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className="bg-zinc-900">
       <body className={font.className}>{children}</body>
       <GoogleAnalyticsWrapper />
     </html>
