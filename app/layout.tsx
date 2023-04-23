@@ -8,9 +8,47 @@ const font = Poppins({
 });
 
 export const metadata = {
-  title: "Saw that band",
+  title: {
+    default: "Saw that band",
+    template: "%s | Saw that band",
+  },
   description:
     "Turn your concert memories into an immersive and shareable experience",
+  openGraph: {
+    title: "Saw that band",
+    description:
+      "Turn your concert memories into an immersive and shareable experience",
+    url: "https://www.sawthat.band",
+    siteName: "Saw that band",
+    images: [
+      {
+        url: "https://www.sawthat.band/thumbnail.png",
+      },
+    ],
+    locale: "en-DE",
+    type: "website",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  twitter: {
+    title: "Saw that band",
+    card: "summary_large_image",
+  },
+  icons: {
+    shortcut: "/favicon.ico",
+  },
+  verification: {
+    google: "ofTvVJZzZHEMRIXg6cCRslqaEnRO3cqrum3zjSZTDu0",
+  },
 };
 
 export default function RootLayout({
