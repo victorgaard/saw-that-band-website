@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.0.17",
+    "@sendgrid/mail": "^7.7.0",
     "@supabase/supabase-js": "^2.21.0",
     "@types/node": "18.15.13",
     "@types/react": "18.0.38",
