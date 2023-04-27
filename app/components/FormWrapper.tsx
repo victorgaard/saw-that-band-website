@@ -53,7 +53,7 @@ function FormWrapper() {
         setSuccess(true);
         setUsername("");
         setEmail("");
-        sendMail(userRef.current.email, userRef.current.username);
+        // sendMail(userRef.current.email, userRef.current.username);
       }
     });
   }
