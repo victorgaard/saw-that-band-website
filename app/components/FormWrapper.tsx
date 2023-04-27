@@ -3,6 +3,7 @@
 import { ChangeEvent, useRef, useState } from "react";
 import Form from "./Form";
 import reserveAddress from "../utils/reserveAddress";
+import sendMail from "../utils/sendMail";
 
 function FormWrapper() {
   const [loading, setLoading] = useState(false);
@@ -15,7 +16,7 @@ function FormWrapper() {
   const validEmailRegex = /^[\w-\\.]+@([\w-]+\.)+[\w-]{2,4}$/;
   const onlyLowerCaseLettersRegex = /^[a-z]+$/;
   const isValidEmail = validEmailRegex.test(email);
-  
+
   function handleUsernameChange(e: ChangeEvent<HTMLInputElement>) {
     const currentUsername = e.target.value.toLowerCase().trim();
     if (onlyLowerCaseLettersRegex.test(currentUsername)) {
@@ -52,10 +53,10 @@ function FormWrapper() {
         setSuccess(true);
         setUsername("");
         setEmail("");
+        sendMail(userRef.current.email, userRef.current.username);
       }
     });
   }
-
 
   return (
     <Form
