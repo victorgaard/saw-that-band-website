@@ -2,7 +2,7 @@ import { API_URL } from "@/environments/environments";
 
 async function reserveAddress(email: string, username: string) {
   const res = await fetch(
-    `${API_URL}/api/username?email=${email}&username=${username}`,
+    `${API_URL}/api/register?email=${email}&username=${username}`,
     {
       method: "POST",
       cache: "no-store",
