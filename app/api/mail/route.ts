@@ -20,9 +20,7 @@ export async function GET(request: NextRequest) {
     html,
   };
 
-  sendgrid.send(options).catch((error) => {
-    return NextResponse.json({ error: `email could not be sent! ${error}` });
-  });
+  await sendgrid.send(options);
 
   return NextResponse.json({ success: "email was sent!" });
 }
