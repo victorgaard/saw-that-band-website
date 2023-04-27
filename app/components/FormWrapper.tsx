@@ -3,7 +3,6 @@
 import { ChangeEvent, useRef, useState } from "react";
 import Form from "./Form";
 import reserveAddress from "../utils/reserveAddress";
-import sendMail from "../utils/sendMail";
 
 function FormWrapper() {
   const [loading, setLoading] = useState(false);
@@ -53,7 +52,6 @@ function FormWrapper() {
         setSuccess(true);
         setUsername("");
         setEmail("");
-        // sendMail(userRef.current.email, userRef.current.username);
       }
     });
   }
