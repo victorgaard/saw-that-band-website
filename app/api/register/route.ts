@@ -31,6 +31,7 @@ export async function POST(request: Request) {
         console.log("Email sent");
       })
       .catch((error) => {
+        throw new Error(`Couldn't send email: ${error}`);
         console.error(error);
       });
   }
