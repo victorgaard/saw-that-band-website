@@ -56,6 +56,7 @@ function Form({
           value={username}
           onChange={handleUsernameChange}
           placeholder="username"
+          maxLength={40}
           className="bg-white/10 focus:outline-zinc-100/60 pl-[72px] text-white pr-[132px] w-full border text-sm border-zinc-600 p-4 rounded-lg"
           autoFocus
         />
@@ -65,7 +66,8 @@ function Form({
         value={email}
         onChange={handleEmailChange}
         placeholder="email address"
-        className="bg-white/10 focus:outline-zinc-100/60 text-white pr-[132px] w-full border text-sm border-zinc-600 p-4 rounded-lg"
+        maxLength={50}
+        className="bg-white/10 focus:outline-zinc-100/60 text-white w-full border text-sm border-zinc-600 p-4 rounded-lg"
       />
       <button
         type="submit"

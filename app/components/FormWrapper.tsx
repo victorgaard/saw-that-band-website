@@ -13,7 +13,7 @@ function FormWrapper() {
   const userRef = useRef<{ email: string; username: string }>();
 
   const validEmailRegex = /^[\w-\\.]+@([\w-]+\.)+[\w-]{2,4}$/;
-  const onlyLowerCaseLettersRegex = /^[a-z]+$/;
+  const onlyLowerCaseLettersRegex = /^[a-z0-9]+$/;
   const isValidEmail = validEmailRegex.test(email);
 
   function handleUsernameChange(e: ChangeEvent<HTMLInputElement>) {
