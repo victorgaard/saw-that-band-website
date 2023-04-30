@@ -42,11 +42,11 @@ export default function Home() {
               <ArrowRightIcon className="h-4 w-4 group-hover:ml-2 transition-all group-hover:text-emerald-400" />
             </a>
           </div>
-          <div className="hidden sm:block sm:-mr-[400px] md:-mr-[300px] lg:-mr-[200px] pointer-events-none w-[882px] h-[569px] shrink-0">
+          <div className="hidden sm:block sm:-mr-[542px] md:-mr-[442px] lg:-mr-[342px] pointer-events-none w-[1024px] h-[511px] shrink-0">
             <Image
               src="/preview.png"
-              width={882}
-              height={569}
+              width={1024}
+              height={511}
               alt="Preview of the app"
               priority
             />

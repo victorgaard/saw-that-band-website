@@ -28,6 +28,15 @@ export const metadata = {
     locale: "en-DE",
     type: "website",
   },
+  generator: "Saw that band",
+  applicationName: "Saw that band",
+  keywords: [
+    "saw that band",
+    "seen that band",
+    "band catalog",
+    "concert catalog",
+    "bands seen live",
+  ],
   robots: {
     index: true,
     follow: true,
