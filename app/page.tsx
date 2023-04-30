@@ -48,6 +48,7 @@ export default function Home() {
               width={882}
               height={569}
               alt="Preview of the app"
+              priority
             />
           </div>
         </div>
