@@ -3,7 +3,7 @@
 import { GoogleAnalytics } from 'nextjs-google-analytics';
 
 function GoogleAnalyticsWrapper() {
-  return <GoogleAnalytics trackPageViews />;
+  return <GoogleAnalytics trackPageViews strategy="lazyOnload" />;
 }
 
 export default GoogleAnalyticsWrapper;
