@@ -22,7 +22,9 @@ export async function POST(request: Request) {
     html,
   };
 
-  await sendgrid.send(options);
+  if (!error) {
+    await sendgrid.send(options);
+  }
 
   return NextResponse.json({ data, error });
 }
