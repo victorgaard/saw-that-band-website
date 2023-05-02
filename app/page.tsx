@@ -5,15 +5,20 @@ import FormWrapper from "./components/FormWrapper";
 
 export default function Home() {
   return (
-    <div className="bg-zinc-900 min-h-screen overflow-hidden">
-      <Image
-        src="/bg.png"
-        width={2000}
-        height={2000}
-        alt="Background image"
-        className="absolute -top-[60px] z-0 w-full h-[1200px] pointer-events-none [mask-image:linear-gradient(to_top,transparent_25%,#18181B_35%)]"
-      />
-      <div className="hidden sm:flex fixed h-full flex-col justify-between items-center w-20 p-6 gap-6 text-zinc-600">
+    <div className="relative bg-zinc-900 overflow-hidden">
+      <video
+        autoPlay
+        muted
+        loop
+        className="hidden sm:block -mt-8 -right-4 absolute z-0 pointer-events-none [mask-image:linear-gradient(to_top,transparent_5%,#18181B_25%)] opacity-80 object-cover"
+      >
+        <source
+          src="https://guerfzlhzjrpooirzvlf.supabase.co/storage/v1/object/public/Assets/demo.mp4"
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
+      <div className="hidden sm:flex fixed h-full bg-zinc-900/40 backdrop-blur-lg flex-col justify-between items-center w-20 p-6 gap-6 text-zinc-600">
         <div className="shrink-0">
           <Logo width={48} height={48} />
         </div>
@@ -22,8 +27,8 @@ export default function Home() {
           saw that band
         </p>
       </div>
-      <main className="flex max-w-[1400px] mx-auto relative">
-        <div className="flex flex-wrap sm:flex-nowrap items-center p-6 text-white sm:ml-20 gap-12 mt-12">
+      <main className="flex relative">
+        <div className="flex items-center px-12 bg-zinc-800/50 border-r border-r-zinc-500/30 shadow-2xl w-[500px] backdrop-blur-lg text-white sm:ml-20 gap-12 h-screen">
           <div className="flex flex-col gap-10">
             <h1 className="text-4xl leading-9 font-bold">
               Turn your concert memories into an immersive and shareable
@@ -41,15 +46,6 @@ export default function Home() {
               </span>
               <ArrowRightIcon className="h-4 w-4 group-hover:ml-2 transition-all group-hover:text-emerald-400" />
             </a>
-          </div>
-          <div className="hidden sm:block sm:-mr-[542px] md:-mr-[442px] lg:-mr-[342px] pointer-events-none w-[1024px] h-[511px] shrink-0">
-            <Image
-              src="/preview.png"
-              width={1024}
-              height={511}
-              alt="Preview of the app"
-              priority
-            />
           </div>
         </div>
       </main>
