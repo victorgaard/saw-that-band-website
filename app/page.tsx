@@ -1,6 +1,5 @@
 import Logo from "./components/Logo";
 import { ArrowRightIcon } from "@heroicons/react/24/solid";
-import FormWrapper from "./components/FormWrapper";
 import Video from "./components/Video";
 
 export default async function Home() {
@@ -23,7 +22,12 @@ export default async function Home() {
               Turn your concert memories into an immersive and shareable
               experience
             </h1>
-            <FormWrapper />
+            <a
+              href="https://app.sawthat.band/signup"
+              className="bg-gradient-to-br flex items-center justify-center gap-1 from-emerald-400 to-green-400 hover:from-green-400 hover:to-green-400 text-zinc-900 text-sm font-semibold p-4 rounded-lg"
+            >
+              Create yours now <span className="text-lg">🤘</span>
+            </a>
             <a
               href="https://victor.sawthat.band"
               target="_blank"
