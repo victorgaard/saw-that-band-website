@@ -23,10 +23,10 @@ export default async function Home() {
               experience
             </h1>
             <a
-              href="https://app.sawthat.band/signup"
+              href="https://app.sawthat.band/signup?utm_source=website"
               className="bg-gradient-to-br flex items-center justify-center gap-1 from-emerald-400 to-green-400 hover:from-green-400 hover:to-green-400 text-zinc-900 text-sm font-semibold p-4 rounded-lg"
             >
-              Create yours now <span className="text-lg">🤘</span>
+              Create your profile now <span className="text-lg">🤘</span>
             </a>
             <a
               href="https://victor.sawthat.band"
