@@ -40,6 +40,24 @@ export default async function Home() {
               <ArrowRightIcon className="h-4 w-4 group-hover:ml-2 transition-all group-hover:text-emerald-400" />
             </a>
           </div>
+          <div className="absolute bottom-6 left-12 flex items-center gap-8 text-sm text-zinc-400">
+            <a
+              href="/privacy/index.html"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-white hover:underline underline-offset-2"
+            >
+              Privacy policy
+            </a>
+            <a
+               href="/terms-and-conditions/index.html"
+               target="_blank"
+               rel="noreferrer"
+              className="hover:text-white hover:underline underline-offset-2"
+            >
+              Terms and conditions
+            </a>
+          </div>
         </div>
       </main>
     </div>
